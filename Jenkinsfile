@@ -31,7 +31,7 @@ pipeline {
                 always {
                     // Archive unit tests for the future
                     echo "Done building"
-                    //junit allowEmptyResults: true, testResults: 'reports/unit_tests.xml'
+                    junit allowEmptyResults: true, testResults: 'reports/unit_tests.xml'
                 }
                 success {
                     echo "Successful"
