@@ -1,4 +1,4 @@
 from simple import inc
 
 def test_answer():
-    assert inc.inc(3) == 5
+    assert inc.inc(3) == 4
