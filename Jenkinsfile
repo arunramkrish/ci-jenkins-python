@@ -75,6 +75,7 @@ pipeline {
 		*/
 		stage('Pull and run docker image') {
 			steps{
+				bat "docker login -u arunramkrish -p R@AbAi11"
 				bat "docker run arunramkrish/docker-demo"
 			}
 		}
