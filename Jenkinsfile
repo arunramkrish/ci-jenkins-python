@@ -66,19 +66,6 @@ pipeline {
 				bat "docker push arunramkrish/docker-demo"
 			}
 		}
-		
-		stage('Remove Unused docker image') {
-			steps{
-				bat "docker rmi $registry:$BUILD_NUMBER"
-			}
-		}
-		/*
-		stage('Pull and run docker image') {
-			steps{
-				bat "docker login -u arunramkrish -p R@AbAi11"
-				bat "docker run arunramkrish/docker-demo"
-			}
-		}*/
     }
 
 }
