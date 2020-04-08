@@ -51,7 +51,7 @@ pipeline {
                 }
             }
         }
-		
+		/*
 		stage('Building image') {
 			steps{
 				script {
@@ -66,12 +66,18 @@ pipeline {
 				bat "docker push arunramkrish/docker-demo"
 			}
 		}
+		
 		stage('Remove Unused docker image') {
 			steps{
-				sh "docker rmi $registry:$BUILD_NUMBER"
+				bat "docker rmi $registry:$BUILD_NUMBER"
 			}
 		}
-
+		*/
+		stage('Pull and run docker image') {
+			steps{
+				bat "docker run arunramkrish/docker-demo"
+			}
+		}
     }
 
 }
