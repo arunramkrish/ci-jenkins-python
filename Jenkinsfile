@@ -1,4 +1,9 @@
 pipeline {
+	environment {
+		registry = "arunramkrish/docker-demo"
+		registryCredential = 'dockerhub'
+	} 
+  
     agent any
 
     triggers {
@@ -46,6 +51,14 @@ pipeline {
                 }
             }
         }
+		
+		stage('Building image') {
+			steps{
+				script {
+					docker.build registry + ":$BUILD_NUMBER"
+				}
+			}
+		}
 
     }
 
