@@ -62,11 +62,8 @@ pipeline {
 		
 		stage('Deploy Image') {
 			steps{
-				script {
-					docker.withRegistry( '', registryCredential ) {
-						dockerImage.push()
-					}
-				}
+				bat "docker login -u arunramkrish -p R@AbAi11"
+				bat "docker push arunramkrish/docker-demo"
 			}
 		}
 		stage('Remove Unused docker image') {
